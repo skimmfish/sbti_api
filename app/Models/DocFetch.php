@@ -33,7 +33,15 @@ class DocFetch extends Model
 			"baseyear",
 			"targetyear",
 			"datepublished",
-			"slug"
+			"slug",
+            "extension",
+            "neartermtarget_classification",
+            "neartermtarget_year",
+            "longtermtarget_status",
+            "longtermtarget_classification",
+            
+
+
     ];
 
     protected $dates = [
