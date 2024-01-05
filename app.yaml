@@ -1,0 +1,5 @@
+runtime: php72
+env_variables:
+   APP_KEY: base64:1JaePZBD3/ZDJzVZqkC2kF3afPHK4wXYcZGsEVUKQvU=
+   APP_STORAGE: /tmp
+   VIEW_COMPILED_PATH: /tmp
