@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('longtermtarget_year')->nullable();
             $table->string('netzerocommitted')->nullable();
             $table->string('netzerotarget')->nullable();
-            $table->string('sme')->nulable();
+            $table->string('sme')->nullable();
             $table->string('sector')->nullable();
             $table->string('companytemperaturealignment')->nullable();
             $table->string('companytemperature')->nullable();
