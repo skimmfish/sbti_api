@@ -16,14 +16,18 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+});*/
+
+Route::get('/',function(){
+    echo "Welcome Home";
+})->name('index');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -39,6 +43,13 @@ Route::middleware('auth')->group(function () {
 Route::get('/upload-file',function(){
     return view('upload_file')->with(['title'=>'Upload Excel Files to Database']);
 })->name('import_excel');
+
+
+Route::get('/migrate',function(){
+
+\Artisan::call('migrate');
+
+})->name('migrate_db');
 
 //importing excel sheet
 Route::post('/import-file',[\App\Http\Controllers\DocFetchController::class,'import_excel_sheet'])->name('upload_excel');

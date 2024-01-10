@@ -1,5 +1,5 @@
-runtime: php81  # version of php
-env: standard     # set app engine env to standard
+runtime: php82  # version of php
+env: flex     # set app engine env to standard
 runtime_config:
   document_root: .
 # for detecting static files in the public folder
@@ -16,11 +16,12 @@ env_variables:
   APP_STORAGE: /tmp
   VIEW_COMPILED_PATH: /tmp
   DB_CONNECTION: mysql
+  DB_SOCKET: /cloudsql/sbti-410411:us-central1:sbti-db
   DB_HOST: 127.0.0.1
   DB_PORT: 3306
-  DB_DATABASE: sbtitbl_feeder
+  DB_DATABASE: sbti-db
   DB_USERNAME: root
-  DB_PASSWORD: ""
+  DB_PASSWORD: deji
   APP_NAME: "SBTI Table API"
   APP_ENV: production
   APP_DEBUG: true
@@ -45,3 +46,5 @@ env_variables:
   APP_PACKAGES_CACHE: /tmp/packages.php
   APP_CONFIG_CACHE: /tmp/config.php
   APP_ROUTES_CACHE: /tmp/routes.php
+beta_settings:
+      cloud_sql_instances: sbti-db
