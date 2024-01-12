@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Excel;
+//use Excel;
 
 class DocFetchController extends Controller
 {
@@ -53,8 +53,8 @@ class DocFetchController extends Controller
          // Get the uploaded file
          $file = $request->file('import_f');
 
-          // ProcessING the Excel file 
-         Excel::import(new \App\Imports\ImportClass, $file);
+          // ProcessING the Excel file
+        // Excel::import(new \App\Imports\ImportClass, $file);
 
          //RETURNING RESPONSE TO THE FRONTEND
          return response()->json(['message'=>'Doc. data imported successfully','status'=>true],200);
