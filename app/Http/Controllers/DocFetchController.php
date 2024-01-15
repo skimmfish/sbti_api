@@ -15,6 +15,8 @@ class DocFetchController extends Controller
      * @header Connection close
      * @header Accept * / *
      * @header Content-Type application/json;utf-8
+     * @header API_KEY
+     * @ header API_SECRET
      */
 
      public function fetch_sbti_data(){
