@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Excel;
+use ZipArchive;
 
 class DocFetchController extends Controller
 {
@@ -18,17 +19,23 @@ class DocFetchController extends Controller
      * @header API_KEY
      * @ header API_SECRET
      */
+    protected $code;
 
-     public function fetch_sbti_data(){
+     public function fetch_sbti_data($code){
+
+        $this->code = 'a25630290119SBTix-enmod';
 
         try{
+            if($code==$this->code){
             //finding records from the exceltbl table paginating same data at 20 records per page
             $res = \App\Models\DocFetch::paginate(20);
 
             if(!is_null($res)){
                 return response()->json(['data'=>$res,'status'=>true,'message'=>'records_retrieved_successfully'],200);
             }
-
+        }else{
+            return response()->json(['data'=>'NULL','message'=>'no records retrieved, contact the administrators'],404);
+        }
         }catch(\Exception $e){
             return response()->json(['data'=>null,'message'=>'error','error'=>$e->getMessage()],500);
         }

@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //for fetching data in paginated format from the backend
-Route::get('/fetch-sbti-data',[\App\Http\Controllers\DocFetchController::class,'fetch_sbti_data'])->name('fetch_sbti_data');
+Route::get('/fetch-sbti-data/{code}',[\App\Http\Controllers\DocFetchController::class,'fetch_sbti_data'])->name('fetch_sbti_data');
 
 //for importing excel data into the database via the API
 Route::post('/import-sbti-data',[\App\Http\Controllers\DocFetchController::class,'import_excel_sheet'])->name('import_sbti_data');
